@@ -10,7 +10,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended",
     "airbnb",
-    "airbnb-typescript"
+    "airbnb-typescript",
+    "plugin:prettier/recommended"
   ],
   "overrides": [
   ],
@@ -25,7 +26,8 @@
   },
   "plugins": [
     "react",
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "rules": {
   },
