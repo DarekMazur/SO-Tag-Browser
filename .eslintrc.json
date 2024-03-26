@@ -37,9 +37,10 @@
     "vitest"
   ],
   "rules": {
-    "react/react-in-jsx-scope": ["off"]
+    "react/react-in-jsx-scope": ["off"],
+    "react/function-component-definition": "off"
   },
-  "ignorePatterns": ["vite.config.ts"],
+  "ignorePatterns": ["vite.config.ts", "**/*.html"],
   "settings": {
     "import/resolver": {
       "typescript": {}
