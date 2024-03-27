@@ -1,6 +1,6 @@
 import { TableBody, TableRow } from '@mui/material';
 import { mockTags } from '../../../mocks/mocks.ts';
-import TagLink from '../../Atoms/TagLink.tsx';
+import TagLink from '../../Atoms/TagLink/TagLink.tsx';
 import TableItem from '../../Atoms/TableItem/TableItem.tsx';
 
 const TableContent = () => {
