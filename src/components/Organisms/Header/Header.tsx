@@ -1,11 +1,10 @@
-import { Container, Typography } from '@mui/material';
+import { Container } from '@mui/material';
+import Title from '../../Atoms/Title/Title.tsx';
 
 const Header = () => {
   return (
     <Container component="header">
-      <Typography variant="h2" component="h1">
-        Lorem ipsum
-      </Typography>
+      <Title label="Lorem Ipsum" />
     </Container>
   );
 };
