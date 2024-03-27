@@ -1,4 +1,8 @@
+import { mockTags } from './mocks/mocks.ts';
+
 const App = () => {
+  const perPageCount: number[] = [5, 15, 25, 50, 100];
+
   return (
     <>
       <header>
@@ -7,11 +11,9 @@ const App = () => {
       <main>
         <span>Tags per page</span>
         <ul>
-          <li>5</li>
-          <li>15</li>
-          <li>25</li>
-          <li>50</li>
-          <li>100</li>
+          {perPageCount.map((count) => (
+            <li key={count}>{count}</li>
+          ))}
         </ul>
         <table>
           <thead>
@@ -22,45 +24,21 @@ const App = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th>javascript</th>
-              <td>{new Intl.NumberFormat().format(2528450)}</td>
-              <td>
-                <a
-                  href="https://stackoverflow.com/questions/tagged/javascript"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  icon
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <th>python</th>
-              <td>{new Intl.NumberFormat().format(2191569)}</td>
-              <td>
-                <a
-                  href="https://stackoverflow.com/questions/tagged/python"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  icon
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <th>java</th>
-              <td>{new Intl.NumberFormat().format(1917050)}</td>
-              <td>
-                <a
-                  href="https://stackoverflow.com/questions/tagged/java"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  icon
-                </a>
-              </td>
-            </tr>
+            {mockTags.items.map((tag) => (
+              <tr key={tag.name}>
+                <th>{tag.name}</th>
+                <td>{new Intl.NumberFormat().format(tag.count)}</td>
+                <td>
+                  <a
+                    href={`https://stackoverflow.com/questions/tagged/${tag.name}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    icon
+                  </a>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <div>pagination</div>
