@@ -11,3 +11,7 @@ export interface ITag {
 export interface ITagLink {
   to: string;
 }
+
+export interface ITableHeaders {
+  headers: string[];
+}

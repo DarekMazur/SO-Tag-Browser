@@ -4,26 +4,22 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
 } from '@mui/material';
 import Pagination from '../../Molecules/Pagination/Pagination.tsx';
 import { mockTags } from '../../../mocks/mocks.ts';
 import TagLink from '../../Atoms/TagLink.tsx';
+import TableHeader from '../../Molecules/TableHeader/TableHeader.tsx';
 
 const TableWrapper = () => {
+  const headers: string[] = ['Tag', 'Posts count', ''];
+
   return (
     <TableContainer>
       <Pagination items={mockTags.items} />
       <Paper elevation={2}>
         <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Tag</TableCell>
-              <TableCell>Posts count</TableCell>
-              <TableCell>LINK</TableCell>
-            </TableRow>
-          </TableHead>
+          <TableHeader headers={headers} />
           <TableBody>
             {mockTags.items.map((tag) => (
               <TableRow key={tag.name}>
