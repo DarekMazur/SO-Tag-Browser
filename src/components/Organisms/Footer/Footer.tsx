@@ -1,4 +1,5 @@
 import { Container } from '@mui/material';
+import Copyrights from '../../Atoms/Copyrights/Copyrights.tsx';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
         height: '5rem',
       }}
     >
-      &copy; 2024 Darek Mazur
+      <Copyrights />
     </Container>
   );
 };
