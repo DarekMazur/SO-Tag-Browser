@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import Pagination from '../../Molecules/Pagination/Pagination.tsx';
 import { mockTags } from '../../../mocks/mocks.ts';
+import TagLink from '../../Atoms/TagLink.tsx';
 
 const TableWrapper = () => {
   return (
@@ -31,13 +32,7 @@ const TableWrapper = () => {
                   {new Intl.NumberFormat().format(tag.count)}
                 </TableCell>
                 <TableCell>
-                  <a
-                    href={`https://stackoverflow.com/questions/tagged/${tag.name}`}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    icon
-                  </a>
+                  <TagLink to={tag.name} />
                 </TableCell>
               </TableRow>
             ))}
