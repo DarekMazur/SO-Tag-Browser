@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import { mockTags } from './mocks/mocks.ts';
 import theme from './providers/ThemeProvider.ts';
+import Header from './components/Organisms/Header/Header.tsx';
 
 const App = () => {
   const perPageCount: number[] = [5, 15, 25, 50, 100];
@@ -20,11 +21,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Typography>
-        <Container component="header">
-          <Typography variant="h2" component="h1">
-            Lorem ipsum
-          </Typography>
-        </Container>
+        <Header />
         <Container component="main">
           <TablePagination
             rowsPerPageOptions={perPageCount}
