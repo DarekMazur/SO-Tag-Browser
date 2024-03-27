@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { Link } from '@mui/material';
-import { ITagLink } from '../../types/types.ts';
+import { ITagLink } from '../../../types/types.ts';
 
 const TagLink: FC<ITagLink> = ({ to }) => {
   return (
