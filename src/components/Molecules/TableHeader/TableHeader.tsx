@@ -7,7 +7,7 @@ const TableHeader: FC<ITableHeaders> = ({ headers }) => {
     <TableHead>
       <TableRow>
         {headers.map((header) => (
-          <TableCell key={header}>{header}</TableCell>
+          <TableCell key={header || 'link'}>{header}</TableCell>
         ))}
       </TableRow>
     </TableHead>

@@ -7,7 +7,7 @@ import TableWrapper from './components/Organisms/TableWrapper/TableWrapper.tsx';
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Typography>
+      <Typography component="div">
         <Header />
         <Container component="main">
           <TableWrapper />
