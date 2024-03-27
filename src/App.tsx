@@ -14,6 +14,7 @@ import {
 import { mockTags } from './mocks/mocks.ts';
 import theme from './providers/ThemeProvider.ts';
 import Header from './components/Organisms/Header/Header.tsx';
+import Footer from './components/Organisms/Footer/Footer.tsx';
 
 const App = () => {
   const perPageCount: number[] = [5, 15, 25, 50, 100];
@@ -66,17 +67,7 @@ const App = () => {
             </TableContainer>
           </Paper>
         </Container>
-        <Container
-          component="footer"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            height: '5rem',
-          }}
-        >
-          &copy; 2024 Darek Mazur
-        </Container>
+        <Footer />
       </Typography>
     </ThemeProvider>
   );
