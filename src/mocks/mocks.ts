@@ -1,18 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { faker } from '@faker-js/faker';
-
-interface ITagTypes {
-  items: {
-    has_synonyms: boolean;
-    is_moderator_only: boolean;
-    is_required: boolean;
-    count: number;
-    name: string;
-  }[];
-}
+import { ITag } from '../types/types.ts';
 
 // eslint-disable-next-line import/prefer-default-export
-export const mockTags: ITagTypes = {
+export const mockTags: ITag = {
   items: [],
 };
 

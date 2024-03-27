@@ -6,7 +6,6 @@ import {
   TableCell,
   TableContainer,
   TableHead,
-  TablePagination,
   TableRow,
   ThemeProvider,
   Typography,
@@ -15,27 +14,17 @@ import { mockTags } from './mocks/mocks.ts';
 import theme from './providers/ThemeProvider.ts';
 import Header from './components/Organisms/Header/Header.tsx';
 import Footer from './components/Organisms/Footer/Footer.tsx';
+import Pagination from './components/Molecules/Pagination/Pagination.tsx';
 
 const App = () => {
-  const perPageCount: number[] = [5, 15, 25, 50, 100];
-
   return (
     <ThemeProvider theme={theme}>
       <Typography>
         <Header />
         <Container component="main">
-          <TablePagination
-            rowsPerPageOptions={perPageCount}
-            component="div"
-            count={mockTags.items.length}
-            rowsPerPage={5}
-            page={0}
-            onPageChange={() => {}}
-            onRowsPerPageChange={() => {}}
-            labelRowsPerPage="Tags per page"
-          />
-          <Paper elevation={2}>
-            <TableContainer>
+          <TableContainer>
+            <Pagination items={mockTags.items} />
+            <Paper elevation={2}>
               <Table>
                 <TableHead>
                   <TableRow>
@@ -64,8 +53,8 @@ const App = () => {
                   ))}
                 </TableBody>
               </Table>
-            </TableContainer>
-          </Paper>
+            </Paper>
+          </TableContainer>
         </Container>
         <Footer />
       </Typography>
