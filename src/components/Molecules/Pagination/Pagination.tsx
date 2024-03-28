@@ -1,8 +1,9 @@
-import { TablePagination } from '@mui/material';
 import { ChangeEvent, MouseEvent, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ITag } from '../../../types/types.ts';
+import TablePagination from '@mui/material/TablePagination';
 import { setPagination, setTagsPerPage } from '../../../store';
+import { ITag } from '../../../types/types.ts';
+import PaginationActions from '../PaginationActions/PaginationActions.tsx';
 
 const Pagination: FC<ITag> = ({ items }) => {
   const pagination = useSelector((state) => state.pagination);
@@ -34,6 +35,7 @@ const Pagination: FC<ITag> = ({ items }) => {
       onPageChange={handleChangePage}
       onRowsPerPageChange={handleChangeRowsPerPage}
       labelRowsPerPage="Tags per page"
+      ActionsComponent={PaginationActions}
     />
   );
 };
