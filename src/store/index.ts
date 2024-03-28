@@ -1,5 +1,7 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
+export type RootState = ReturnType<typeof store.getState>;
+
 const paginationSlice = createSlice({
   name: 'pagination',
   initialState: 0,

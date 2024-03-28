@@ -1,13 +1,13 @@
 import { ChangeEvent, MouseEvent, FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TablePagination from '@mui/material/TablePagination';
-import { setPagination, setTagsPerPage } from '../../../store';
+import { RootState, setPagination, setTagsPerPage } from '../../../store';
 import { ITag } from '../../../types/types.ts';
 import PaginationActions from '../PaginationActions/PaginationActions.tsx';
 
 const Pagination: FC<ITag> = ({ items }) => {
-  const pagination = useSelector((state) => state.pagination);
-  const tagsPerPage = useSelector((state) => state.tagsPerPage);
+  const pagination = useSelector((state: RootState) => state.pagination);
+  const tagsPerPage = useSelector((state: RootState) => state.tagsPerPage);
   const dispatch = useDispatch();
   const perPageCount: number[] = [5, 15, 25, 50, 100];
 

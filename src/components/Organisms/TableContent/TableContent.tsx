@@ -3,10 +3,11 @@ import { useSelector } from 'react-redux';
 import { mockTags } from '../../../mocks/mocks.ts';
 import TagLink from '../../Atoms/TagLink/TagLink.tsx';
 import TableItem from '../../Atoms/TableItem/TableItem.tsx';
+import { RootState } from '../../../store';
 
 const TableContent = () => {
-  const pagination = useSelector((state) => state.pagination);
-  const tagsPerPage = useSelector((state) => state.tagsPerPage);
+  const pagination = useSelector((state: RootState) => state.pagination);
+  const tagsPerPage = useSelector((state: RootState) => state.tagsPerPage);
 
   return (
     <TableBody>
