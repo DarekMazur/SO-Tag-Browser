@@ -1,20 +1,18 @@
-import { Container, ThemeProvider, Typography } from '@mui/material';
-import theme from './providers/ThemeProvider.ts';
+import { Container } from '@mui/material';
 import Header from './components/Organisms/Header/Header.tsx';
 import Footer from './components/Organisms/Footer/Footer.tsx';
 import TableWrapper from './components/Organisms/TableWrapper/TableWrapper.tsx';
+import AppProviders from './providers/AppProviders.tsx';
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Typography component="div">
-        <Header />
-        <Container component="main">
-          <TableWrapper />
-        </Container>
-        <Footer />
-      </Typography>
-    </ThemeProvider>
+    <AppProviders>
+      <Header />
+      <Container component="main">
+        <TableWrapper />
+      </Container>
+      <Footer />
+    </AppProviders>
   );
 };
 
