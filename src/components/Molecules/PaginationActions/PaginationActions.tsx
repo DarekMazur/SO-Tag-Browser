@@ -9,12 +9,12 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 interface IPaginationActionsProps {
   count: number;
   page: number;
-  rowsPerPage: number;
+  tagsPerPage: number;
   onPageChange: (event: MouseEvent<HTMLButtonElement>, newPage: number) => void;
 }
 
 const PaginationActions = (props: IPaginationActionsProps) => {
-  const { count, page, rowsPerPage, onPageChange } = props;
+  const { count, page, tagsPerPage, onPageChange } = props;
 
   const handleFirstPageButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
     onPageChange(event, 0);
@@ -29,7 +29,7 @@ const PaginationActions = (props: IPaginationActionsProps) => {
   };
 
   const handleLastPageButtonClick = (event: MouseEvent<HTMLButtonElement>) => {
-    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+    onPageChange(event, Math.max(0, Math.ceil(count / tagsPerPage) - 1));
   };
 
   return (
@@ -50,14 +50,14 @@ const PaginationActions = (props: IPaginationActionsProps) => {
       </IconButton>
       <IconButton
         onClick={handleNextButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        disabled={page >= Math.ceil(count / tagsPerPage) - 1}
         aria-label="next page"
       >
         <KeyboardArrowRight />
       </IconButton>
       <IconButton
         onClick={handleLastPageButtonClick}
-        disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+        disabled={page >= Math.ceil(count / tagsPerPage) - 1}
         aria-label="last page"
       >
         <LastPageIcon />
