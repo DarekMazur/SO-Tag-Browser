@@ -16,8 +16,9 @@ const TableContent = () => {
             pagination * tagsPerPage + tagsPerPage,
           )
         : mockTags.items
-      ).map((tag) => (
+      ).map((tag, index) => (
         <TableRow key={tag.name}>
+          <TableItem label={index + 1 + pagination * tagsPerPage} />
           <TableItem label={tag.name} />
           <TableItem label={new Intl.NumberFormat().format(tag.count)} />
           <TableItem label={<TagLink to={tag.name} />} />

@@ -3,7 +3,7 @@ import TableProvider from '../../../providers/TableProvider.tsx';
 import TableContent from '../TableContent/TableContent.tsx';
 
 const TableWrapper = () => {
-  const headers: string[] = ['Tag', 'Posts count', ''];
+  const headers: string[] = ['', 'Tag', 'Posts count', ''];
 
   return (
     <TableProvider>
