@@ -1,12 +1,22 @@
 import { TableBody, TableRow } from '@mui/material';
+import { useSelector } from 'react-redux';
 import { mockTags } from '../../../mocks/mocks.ts';
 import TagLink from '../../Atoms/TagLink/TagLink.tsx';
 import TableItem from '../../Atoms/TableItem/TableItem.tsx';
 
 const TableContent = () => {
+  const pagination = useSelector((state) => state.pagination);
+  const tagsPerPage = useSelector((state) => state.tagsPerPage);
+
   return (
     <TableBody>
-      {mockTags.items.map((tag) => (
+      {(tagsPerPage > 0
+        ? mockTags.items.slice(
+            pagination * tagsPerPage,
+            pagination * tagsPerPage + tagsPerPage,
+          )
+        : mockTags.items
+      ).map((tag) => (
         <TableRow key={tag.name}>
           <TableItem label={tag.name} />
           <TableItem label={new Intl.NumberFormat().format(tag.count)} />

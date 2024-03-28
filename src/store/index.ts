@@ -4,17 +4,28 @@ const paginationSlice = createSlice({
   name: 'pagination',
   initialState: 0,
   reducers: {
-    setPaginatino(_state, action) {
-      console.log(action.payload);
+    setPagination(_state, action) {
       return action.payload;
     },
   },
 });
 
-export const { setPaginatino } = paginationSlice.actions;
+const tagsPerPageSlice = createSlice({
+  name: 'tagsPerPage',
+  initialState: 5,
+  reducers: {
+    setTagsPerPage(_state, action) {
+      return action.payload;
+    },
+  },
+});
+
+export const { setPagination } = paginationSlice.actions;
+export const { setTagsPerPage } = tagsPerPageSlice.actions;
 
 export const store = configureStore({
   reducer: {
     pagination: paginationSlice.reducer,
+    tagsPerPage: tagsPerPageSlice.reducer,
   },
 });
