@@ -11,7 +11,7 @@ const App = () => {
   return (
     <AppProviders>
       <Header />
-      <Container component="main" sx={{ minHeight: height }}>
+      <Container component="main" sx={{ minHeight: height, padding: '2rem 0' }}>
         <TableWrapper />
       </Container>
       <Footer />

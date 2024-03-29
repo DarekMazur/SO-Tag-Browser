@@ -1,4 +1,5 @@
 import { createTheme } from '@mui/material';
+import { blueGrey } from '@mui/material/colors';
 
 const theme = createTheme({
   typography: {
@@ -11,6 +12,7 @@ const theme = createTheme({
         body: {
           margin: 0,
           padding: 0,
+          backgroundColor: blueGrey[50],
         },
       },
     },
