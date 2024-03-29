@@ -1,6 +1,7 @@
 import { ChangeEvent, MouseEvent } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TablePagination from '@mui/material/TablePagination';
+import { useTranslation } from 'react-i18next';
 import {
   RootState,
   setPage,
@@ -10,6 +11,7 @@ import {
 import PaginationActions from '../PaginationActions/PaginationActions.tsx';
 
 const Pagination = () => {
+  const { t } = useTranslation();
   const page = useSelector((state: RootState) => state.page);
   const tagsPerPage = useSelector((state: RootState) => state.tagsPerPage);
   const dispatch = useDispatch();
@@ -39,7 +41,7 @@ const Pagination = () => {
       page={page}
       onPageChange={handleChangePage}
       onRowsPerPageChange={handleChangeRowsPerPage}
-      labelRowsPerPage="Tags per page"
+      labelRowsPerPage={t('table.pagination.label')}
       ActionsComponent={PaginationActions}
     />
   );

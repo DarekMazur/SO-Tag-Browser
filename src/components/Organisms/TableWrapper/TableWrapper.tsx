@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import TableHeader from '../../Molecules/TableHeader/TableHeader.tsx';
 import TableProvider from '../../../providers/TableProvider.tsx';
 import TableContent from '../TableContent/TableContent.tsx';
@@ -6,6 +7,7 @@ import { useGetTagsQuery } from '../../../store';
 import LoadingStatus from '../../Molecules/LoadingStatus/LoadingStatus.tsx';
 
 const TableWrapper = () => {
+  const { t } = useTranslation();
   const headers: ITableHeader[] = [
     {
       label: '',
@@ -13,12 +15,12 @@ const TableWrapper = () => {
       isSortable: false,
     },
     {
-      label: 'Tag',
+      label: t('table.header.tag'),
       name: 'name',
       isSortable: true,
     },
     {
-      label: 'Posts count',
+      label: t('table.header.count'),
       name: 'count',
       isSortable: true,
     },

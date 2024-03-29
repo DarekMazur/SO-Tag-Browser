@@ -7,7 +7,6 @@ import { useMinHeight } from './hooks/useMinHeight.ts';
 
 const App = () => {
   const height = useMinHeight();
-
   return (
     <AppProviders>
       <Header />
