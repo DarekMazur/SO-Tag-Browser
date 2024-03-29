@@ -4,7 +4,7 @@ import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { blueGrey, grey } from '@mui/material/colors';
+import { blueGrey } from '@mui/material/colors';
 import { ITableHeeadersProps } from '../../../types/types.ts';
 import { RootState, setOrder, setOrderBy } from '../../../store';
 
@@ -40,7 +40,8 @@ const TableHeader: FC<ITableHeeadersProps> = ({ headers }) => {
       color: `${blueGrey[100]} !important`,
     },
     '&:hover': {
-      color: `${grey[500]} !important`,
+      color: `${blueGrey.A100} !important`,
+      opacity: '0.5',
     },
     '&.Mui-active': {
       color: `${blueGrey[100]} !important`,
