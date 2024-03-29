@@ -3,7 +3,7 @@ import TableProvider from '../../../providers/TableProvider.tsx';
 import TableContent from '../TableContent/TableContent.tsx';
 import { ITableHeader } from '../../../types/types.ts';
 import { useGetTagsQuery } from '../../../store';
-import LoadingStatus from '../../Atoms/LoadingStatus/LoadingStatus.tsx';
+import LoadingStatus from '../../Molecules/LoadingStatus/LoadingStatus.tsx';
 
 const TableWrapper = () => {
   const headers: ITableHeader[] = [
