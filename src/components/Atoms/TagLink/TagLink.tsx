@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { Link } from '@mui/material';
+import { indigo } from '@mui/material/colors';
 import { ITagLink } from '../../../types/types.ts';
 
 const TagLink: FC<ITagLink> = ({ to }) => {
@@ -15,6 +16,11 @@ const TagLink: FC<ITagLink> = ({ to }) => {
         justifyContent: 'flex-end',
         gap: '0.5rem',
         textDecoration: 'none',
+        fontWeight: 500,
+        color: indigo[500],
+        '&:hover': {
+          color: indigo[900],
+        },
       }}
     >
       see posts for {to} <LaunchIcon fontSize="small" />
