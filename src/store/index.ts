@@ -4,11 +4,11 @@ import { tagsApi } from './api/tags.ts';
 
 export type RootState = ReturnType<typeof store.getState>;
 
-const paginationSlice = createSlice({
-  name: 'pagination',
+const pageSlice = createSlice({
+  name: 'page',
   initialState: 0,
   reducers: {
-    setPagination(_state, action) {
+    setPage(_state, action) {
       return action.payload;
     },
   },
@@ -44,7 +44,7 @@ const orderBySlice = createSlice({
   },
 });
 
-export const { setPagination } = paginationSlice.actions;
+export const { setPage } = pageSlice.actions;
 export const { setTagsPerPage } = tagsPerPageSlice.actions;
 export const { setOrder } = orderSlice.actions;
 export const { setOrderBy } = orderBySlice.actions;
@@ -54,7 +54,7 @@ export * from './api/tags.ts';
 export const store = configureStore({
   reducer: {
     [tagsApi.reducerPath]: tagsApi.reducer,
-    pagination: paginationSlice.reducer,
+    page: pageSlice.reducer,
     tagsPerPage: tagsPerPageSlice.reducer,
     order: orderSlice.reducer,
     orderBy: orderBySlice.reducer,

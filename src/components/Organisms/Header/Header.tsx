@@ -4,7 +4,7 @@ import Title from '../../Atoms/Title/Title.tsx';
 const Header = () => {
   return (
     <Container component="header">
-      <Title label="Lorem Ipsum" />
+      <Title label="StackOverflow tags" />
     </Container>
   );
 };

@@ -16,7 +16,7 @@ const TagLink: FC<ITagLink> = ({ to }) => {
         textDecoration: 'none',
       }}
     >
-      see posts <LaunchIcon fontSize="small" />
+      see posts for {to} <LaunchIcon fontSize="small" />
     </Link>
   );
 };
