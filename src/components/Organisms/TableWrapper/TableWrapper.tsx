@@ -2,6 +2,7 @@ import TableHeader from '../../Molecules/TableHeader/TableHeader.tsx';
 import TableProvider from '../../../providers/TableProvider.tsx';
 import TableContent from '../TableContent/TableContent.tsx';
 import { ITableHeader } from '../../../types/types.ts';
+import { useGetTagsQuery } from '../../../store';
 
 const TableWrapper = () => {
   const headers: ITableHeader[] = [
@@ -27,11 +28,21 @@ const TableWrapper = () => {
     },
   ];
 
+  const { data: tags, isLoading, error } = useGetTagsQuery();
+
   return (
-    <TableProvider>
-      <TableHeader headers={headers} />
-      <TableContent />
-    </TableProvider>
+    <>
+      {error ? (
+        'ERROR!'
+      ) : isLoading && !tags ? (
+        'Loading...'
+      ) : (
+        <TableProvider>
+          <TableHeader headers={headers} />
+          <TableContent />
+        </TableProvider>
+      )}
+    </>
   );
 };
 

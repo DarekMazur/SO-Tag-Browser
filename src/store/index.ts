@@ -1,5 +1,6 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 import { ITagItem, TOrder } from '../types/types.ts';
+import { tagsApi } from './api/tags.ts';
 
 export type RootState = ReturnType<typeof store.getState>;
 
@@ -48,11 +49,16 @@ export const { setTagsPerPage } = tagsPerPageSlice.actions;
 export const { setOrder } = orderSlice.actions;
 export const { setOrderBy } = orderBySlice.actions;
 
+export * from './api/tags.ts';
+
 export const store = configureStore({
   reducer: {
+    [tagsApi.reducerPath]: tagsApi.reducer,
     pagination: paginationSlice.reducer,
     tagsPerPage: tagsPerPageSlice.reducer,
     order: orderSlice.reducer,
     orderBy: orderBySlice.reducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(tagsApi.middleware),
 });
