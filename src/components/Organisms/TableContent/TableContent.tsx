@@ -1,6 +1,7 @@
 import { TableBody, TableCell, TableRow } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useMemo } from 'react';
+import { blueGrey } from '@mui/material/colors';
 import TagLink from '../../Atoms/TagLink/TagLink.tsx';
 import TableItem from '../../Atoms/TableItem/TableItem.tsx';
 import { RootState, useGetTagsQuery } from '../../../store';
@@ -50,15 +51,27 @@ const TableContent = () => {
     [tags, order, orderBy, page, tagsPerPage],
   );
 
+  const styledRow = {
+    '&:nth-of-type(odd)': {
+      backgroundColor: blueGrey[100],
+    },
+    '&:nth-of-type(even)': {
+      backgroundColor: blueGrey[50],
+    },
+  };
+
   return (
     <TableBody>
       {visibleRows
         ? visibleRows.map((tag, index) => (
-            <TableRow key={tag.name}>
+            <TableRow key={tag.name} sx={styledRow}>
               <TableItem label={index + 1 + page * tagsPerPage} />
-              <TableItem label={tag.name} />
-              <TableItem label={new Intl.NumberFormat().format(tag.count)} />
-              <TableItem label={<TagLink to={tag.name} />} />
+              <TableItem align="right" label={tag.name} />
+              <TableItem
+                align="right"
+                label={new Intl.NumberFormat().format(tag.count)}
+              />
+              <TableItem align="right" label={<TagLink to={tag.name} />} />
             </TableRow>
           ))
         : null}

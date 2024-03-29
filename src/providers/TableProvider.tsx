@@ -8,12 +8,14 @@ interface ITableProvider {
 
 const TableProvider: FC<ITableProvider> = ({ children }) => {
   return (
-    <TableContainer>
+    <>
       <Pagination />
-      <Paper elevation={2}>
-        <Table>{children}</Table>
+      <Paper sx={{ borderRadius: '5px' }}>
+        <TableContainer sx={{ borderRadius: '5px' }}>
+          <Table>{children}</Table>
+        </TableContainer>
       </Paper>
-    </TableContainer>
+    </>
   );
 };
 
