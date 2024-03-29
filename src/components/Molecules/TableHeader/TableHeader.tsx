@@ -22,7 +22,7 @@ const TableHeader: FC<ITableHeeadersProps> = ({ headers }) => {
     <TableHead>
       <TableRow>
         {headers.map((header) => (
-          <TableCell key={header.name}>
+          <TableCell key={header.name} align={header.label ? 'right' : 'left'}>
             <TableSortLabel
               active={orderBy === header.name}
               hideSortIcon={!header.isSortable}

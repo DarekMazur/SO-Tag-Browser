@@ -12,6 +12,7 @@ const TagLink: FC<ITagLink> = ({ to }) => {
       sx={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: 'flex-end',
         gap: '0.5rem',
         textDecoration: 'none',
       }}

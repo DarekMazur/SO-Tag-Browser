@@ -56,9 +56,12 @@ const TableContent = () => {
         ? visibleRows.map((tag, index) => (
             <TableRow key={tag.name}>
               <TableItem label={index + 1 + page * tagsPerPage} />
-              <TableItem label={tag.name} />
-              <TableItem label={new Intl.NumberFormat().format(tag.count)} />
-              <TableItem label={<TagLink to={tag.name} />} />
+              <TableItem align="right" label={tag.name} />
+              <TableItem
+                align="right"
+                label={new Intl.NumberFormat().format(tag.count)}
+              />
+              <TableItem align="right" label={<TagLink to={tag.name} />} />
             </TableRow>
           ))
         : null}
