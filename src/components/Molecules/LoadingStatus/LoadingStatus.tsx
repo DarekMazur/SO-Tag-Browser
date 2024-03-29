@@ -17,7 +17,7 @@ const LoadingStatus = ({ status }: { status: string }) => {
       {status === 'error' ? (
         <>
           <ErrorOutlineIcon
-            sx={{ fontSize: '3rem', color: red[900], padding: '1.5rem' }}
+            sx={{ fontSize: '3rem', color: red[900], margin: '1.5rem' }}
           />
           <Typography paragraph>
             Something went wrong, we couldn&apos;t get data from
@@ -27,7 +27,7 @@ const LoadingStatus = ({ status }: { status: string }) => {
         </>
       ) : (
         <>
-          <CircularProgress size={60} sx={{ padding: '1.5rem' }} />
+          <CircularProgress size={60} sx={{ margin: '1.5rem' }} />
           <Typography paragraph>Loading...</Typography>
         </>
       )}
