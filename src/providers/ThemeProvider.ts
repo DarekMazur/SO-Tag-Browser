@@ -5,6 +5,12 @@ const theme = createTheme({
   typography: {
     fontSize: 16,
     fontFamily: ['Montserrat', 'sans-serif'].join(','),
+    body1: {
+      color: blueGrey[900],
+    },
+    body2: {
+      color: blueGrey[900],
+    },
   },
   components: {
     MuiCssBaseline: {

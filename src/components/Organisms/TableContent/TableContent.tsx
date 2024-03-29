@@ -53,7 +53,7 @@ const TableContent = () => {
 
   const styledRow = {
     '&:nth-of-type(odd)': {
-      backgroundColor: blueGrey[200],
+      backgroundColor: blueGrey[100],
     },
     '&:nth-of-type(even)': {
       backgroundColor: blueGrey[50],

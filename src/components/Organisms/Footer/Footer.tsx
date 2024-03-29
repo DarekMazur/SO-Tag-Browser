@@ -1,5 +1,5 @@
 import { Container } from '@mui/material';
-import { blueGrey } from '@mui/material/colors';
+import { blueGrey, orange } from '@mui/material/colors';
 import Copyrights from '../../Atoms/Copyrights/Copyrights.tsx';
 
 const Footer = () => {
@@ -10,6 +10,7 @@ const Footer = () => {
     height: '5rem',
     backgroundColor: blueGrey[300],
     width: '100%',
+    borderTop: `10px solid ${orange[700]}`,
   };
 
   return (
