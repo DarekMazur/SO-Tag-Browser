@@ -19,12 +19,54 @@ export const Default: Story = {
     },
   },
   args: {
-    headers: ['Tag', 'Posts count', ''],
+    headers: [
+      {
+        label: '',
+        name: 'order',
+        isSortable: false,
+      },
+      {
+        label: 'Tag',
+        name: 'name',
+        isSortable: true,
+      },
+      {
+        label: 'Posts count',
+        name: 'count',
+        isSortable: true,
+      },
+      {
+        label: '',
+        name: 'link',
+        isSortable: false,
+      },
+    ],
   },
 };
 
 export const NoEmptyHeaders: Story = {
   args: {
-    headers: ['Tag', 'Posts count', 'Lorem'],
+    headers: [
+      {
+        label: 'nr',
+        name: 'order',
+        isSortable: false,
+      },
+      {
+        label: 'Tag',
+        name: 'name',
+        isSortable: true,
+      },
+      {
+        label: 'Posts count',
+        name: 'count',
+        isSortable: true,
+      },
+      {
+        label: 'Link',
+        name: 'link',
+        isSortable: false,
+      },
+    ],
   },
 };
