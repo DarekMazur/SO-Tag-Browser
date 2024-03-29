@@ -7,7 +7,7 @@ import { RootState, useGetTagsQuery } from '../../../store';
 import { TOrder } from '../../../types/types.ts';
 
 const TableContent = () => {
-  const pagination = useSelector((state: RootState) => state.pagination);
+  const page = useSelector((state: RootState) => state.page);
   const tagsPerPage = useSelector((state: RootState) => state.tagsPerPage);
   const orderBy = useSelector((state: RootState) => state.orderBy);
   const order = useSelector((state: RootState) => state.order);
@@ -36,8 +36,8 @@ const TableContent = () => {
   }
 
   const emptyRows =
-    pagination > 0 && tags
-      ? Math.max(0, (1 + pagination) * tagsPerPage - tags.items.length)
+    page > 0 && tags
+      ? Math.max(0, (1 + page) * tagsPerPage - tags.items.length)
       : 0;
 
   const visibleRows = useMemo(
@@ -45,12 +45,9 @@ const TableContent = () => {
       tags
         ? [...tags.items]
             .sort(getComparator(order, orderBy))
-            .slice(
-              pagination * tagsPerPage,
-              pagination * tagsPerPage + tagsPerPage,
-            )
+            .slice(page * tagsPerPage, page * tagsPerPage + tagsPerPage)
         : null,
-    [tags, order, orderBy, pagination, tagsPerPage],
+    [tags, order, orderBy, page, tagsPerPage],
   );
 
   return (
@@ -58,7 +55,7 @@ const TableContent = () => {
       {visibleRows
         ? visibleRows.map((tag, index) => (
             <TableRow key={tag.name}>
-              <TableItem label={index + 1 + pagination * tagsPerPage} />
+              <TableItem label={index + 1 + page * tagsPerPage} />
               <TableItem label={tag.name} />
               <TableItem label={new Intl.NumberFormat().format(tag.count)} />
               <TableItem label={<TagLink to={tag.name} />} />

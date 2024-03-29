@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import TablePagination from '@mui/material/TablePagination';
 import {
   RootState,
-  setPagination,
+  setPage,
   setTagsPerPage,
   useGetTagsQuery,
 } from '../../../store';
 import PaginationActions from '../PaginationActions/PaginationActions.tsx';
 
 const Pagination = () => {
-  const pagination = useSelector((state: RootState) => state.pagination);
+  const page = useSelector((state: RootState) => state.page);
   const tagsPerPage = useSelector((state: RootState) => state.tagsPerPage);
   const dispatch = useDispatch();
   const { data: tags } = useGetTagsQuery();
@@ -20,14 +20,14 @@ const Pagination = () => {
     _event: MouseEvent<HTMLButtonElement> | null,
     newPage: number,
   ) => {
-    dispatch(setPagination(newPage));
+    dispatch(setPage(newPage));
   };
 
   const handleChangeRowsPerPage = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     dispatch(setTagsPerPage(Number(event.target.value)));
-    dispatch(setPagination(0));
+    dispatch(setPage(0));
   };
 
   return (
@@ -36,7 +36,7 @@ const Pagination = () => {
       component="div"
       count={tags ? tags.items.length : 0}
       rowsPerPage={tagsPerPage}
-      page={pagination}
+      page={page}
       onPageChange={handleChangePage}
       onRowsPerPageChange={handleChangeRowsPerPage}
       labelRowsPerPage="Tags per page"
