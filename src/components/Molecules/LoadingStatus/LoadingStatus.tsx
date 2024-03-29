@@ -3,8 +3,10 @@ import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { red } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 import CircularProgress from '@mui/material/CircularProgress';
+import { useTranslation } from 'react-i18next';
 
 const LoadingStatus = ({ status }: { status: string }) => {
+  const { t } = useTranslation();
   const statusWrapper = {
     height: '50vh',
     display: 'flex',
@@ -19,16 +21,13 @@ const LoadingStatus = ({ status }: { status: string }) => {
           <ErrorOutlineIcon
             sx={{ fontSize: '3rem', color: red[900], margin: '1.5rem' }}
           />
-          <Typography paragraph>
-            Something went wrong, we couldn&apos;t get data from
-            StackOverflow...
-          </Typography>
-          <Typography paragraph>Please try again later</Typography>
+          <Typography paragraph>{t('page.status.error.line1')}</Typography>
+          <Typography paragraph>{t('page.status.error.line2')}</Typography>
         </>
       ) : (
         <>
           <CircularProgress size={60} sx={{ margin: '1.5rem' }} />
-          <Typography paragraph>Loading...</Typography>
+          <Typography paragraph>{t('page.status.loading')}</Typography>
         </>
       )}
     </Paper>

@@ -1,8 +1,10 @@
 import { Container } from '@mui/material';
 import { blueGrey, orange } from '@mui/material/colors';
+import { useTranslation } from 'react-i18next';
 import Title from '../../Atoms/Title/Title.tsx';
 
 const Header = () => {
+  const { t } = useTranslation();
   const styledHeaderWrapper = {
     backgroundColor: blueGrey[300],
     width: '100%',
@@ -10,7 +12,7 @@ const Header = () => {
   };
   return (
     <Container component="header" maxWidth={false} sx={styledHeaderWrapper}>
-      <Title label="StackOverflow tags" />
+      <Title label={t('page.title')} />
     </Container>
   );
 };

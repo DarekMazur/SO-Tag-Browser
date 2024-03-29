@@ -1,8 +1,8 @@
 {
   "page" : {
-    "title": "StackOverflow tags",
+    "title": "Tagi StackOverflow",
     "status": {
-      "loading": "ładowanie...",
+      "loading": "Ładowanie...",
       "error": {
         "line1": "Coś poszło nie tak, nie udało się załadować danych ze StackOverflow...",
         "line2": "Spróbuj później"

@@ -2,9 +2,12 @@ import { FC } from 'react';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { Link } from '@mui/material';
 import { orange } from '@mui/material/colors';
+import { useTranslation } from 'react-i18next';
 import { ITagLink } from '../../../types/types.ts';
 
 const TagLink: FC<ITagLink> = ({ to }) => {
+  const { t } = useTranslation();
+
   return (
     <Link
       href={`https://stackoverflow.com/questions/tagged/${to}`}
@@ -23,7 +26,7 @@ const TagLink: FC<ITagLink> = ({ to }) => {
         },
       }}
     >
-      see posts for {to} <LaunchIcon fontSize="small" />
+      {t('table.link', { tag: to })} <LaunchIcon fontSize="small" />
     </Link>
   );
 };
