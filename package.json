@@ -4,20 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "preTest": "vitest --run",
-    "test": "vitest --passWithNoTests",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "prepare": "husky"
+    "start": "vite",
+    "storybook": "storybook dev -p 6006"
   },
   "lint-staged": {
     "*.{js,css,ts,tsx,jsx}": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "vitest --passWithNoTests"
     ]
   },
   "dependencies": {
