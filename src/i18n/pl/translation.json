@@ -1,0 +1,22 @@
+{
+  "page" : {
+    "title": "Tagi StackOverflow",
+    "status": {
+      "loading": "Ładowanie...",
+      "error": {
+        "line1": "Coś poszło nie tak, nie udało się załadować danych ze StackOverflow...",
+        "line2": "Spróbuj później"
+      }
+    }
+  },
+  "table": {
+    "pagination": {
+      "label": "Tagów na stronę"
+    },
+    "header": {
+      "tag": "Tag",
+      "count": "Ilość postów"
+    },
+    "link": "zobacz posty dla {{tag}}"
+  }
+}

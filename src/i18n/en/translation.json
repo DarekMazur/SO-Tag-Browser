@@ -1,0 +1,22 @@
+{
+  "page" : {
+    "title": "StackOverflow tags",
+    "status": {
+      "loading": "Loading...",
+      "error": {
+        "line1": "Something went wrong, we couldn't get data from StackOverflow...",
+        "line2": "Please try again later"
+      }
+    }
+  },
+  "table": {
+    "pagination": {
+      "label": "Tags per page"
+    },
+    "header": {
+      "tag": "Tag",
+      "count": "Posts count"
+    },
+    "link": "see posts for {{tag}}"
+  }
+}
