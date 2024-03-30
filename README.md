@@ -6,9 +6,9 @@ This application serves as a user interface for browsing tags from StackOverflow
 
 The application provides the following functionalities:
 
-Paginated table of tags from the StackOverflow API
-Configuration of the number of items per page
-Selection of sorting fields and directions
+* Paginated table of tags from the StackOverflow API
+* Configuration of the number of items per page
+* Selection of sorting fields and directions
 
 ## Requirements :warning:
 
