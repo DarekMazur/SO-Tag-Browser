@@ -1,30 +1,77 @@
-# React + TypeScript + Vite
+# :bookmark: Tag Browser Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This application serves as a user interface for browsing tags from StackOverflow's API. Users can explore a paginated table of tags along with the number of related posts. Additionally, they can configure the number of items per page through a numerical field above the table and choose sorting fields and directions.
 
-Currently, two official plugins are available:
+## Functionality :bulb:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application provides the following functionalities:
 
-## Expanding the ESLint configuration
+Paginated table of tags from the StackOverflow API
+Configuration of the number of items per page
+Selection of sorting fields and directions
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Requirements :warning:
 
-- Configure the top-level `parserOptions` property like this:
+### Runtime Environment
+* Node.js v20.11.1
+* npm 10.2.4
+* Vite 5.2.0
+* React 18.2.0
+* Material-UI (mui) 5.15.14
+* Redux 9.1.0
+* Redux Toolkit 2.2.2
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Testing Environment
+* vitest 1.4.0
+* React Testing Library 14.2.2
+* Mock Service Worker 2.2.13
+* mwsjs data 0.16.1
+
+## Installation :gear:
+To install the application, follow these steps:
+
+Clone the repository from GitHub:
+
+```bash
+git clone https://github.com/your/repository.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+Install dependencies using npm:
+
+```bash
+npm ci
+```
+
+Start the development server:
+
+```bash
+npm start
+```
+
+
+The server will run on port 5173.
+
+## Storybook :book:
+To view components in isolation, run Storybook:
+
+```bash
+npm run storybook
+```
+
+Storybook will be available at port 6006.
+
+## Deployment :rocket:
+If you wish to deploy the application, follow these additional steps:
+
+Add the following command to the "scripts" section in the package.json file:
+
+```json
+"build": "tsc && vite build"
+```
+
+Run the build command:
+
+```bash
+npm run build
+```
