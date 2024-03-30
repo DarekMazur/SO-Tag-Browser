@@ -33,7 +33,7 @@ To install the application, follow these steps:
 Clone the repository from GitHub:
 
 ```bash
-git clone https://github.com/your/repository.git
+git clone https://github.com/DarekMazur/SO-Tag-Browser-Application.git
 ```
 
 
