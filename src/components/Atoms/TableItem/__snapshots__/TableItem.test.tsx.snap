@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Table Item > Renders the component 1`] = `
+<div>
+  <td
+    class="MuiTableCell-root MuiTableCell-alignLeft MuiTableCell-sizeMedium css-1alr223-MuiTableCell-root"
+  >
+    example
+  </td>
+</div>
+`;

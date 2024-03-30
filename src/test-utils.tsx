@@ -9,7 +9,7 @@ const AllTheProviders = ({ children }: { children: ReactNode }) => {
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-const customRender = (ui, options) =>
+const customRender = (ui, options?) =>
   render(ui, { wrapper: AllTheProviders, ...options });
 
 // eslint-disable-next-line import/no-extraneous-dependencies

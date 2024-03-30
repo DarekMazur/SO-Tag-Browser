@@ -41,7 +41,8 @@
     "react/function-component-definition": "off",
     "import/extensions": "off",
     "react/jsx-no-useless-fragment": "off",
-    "no-nested-ternary": "off"
+    "no-nested-ternary": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "ignorePatterns": ["vite.config.ts", "**/*.html"],
   "settings": {
