@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Tag link > Renders the component 1`] = `
+<div>
+  <h1
+    class="MuiTypography-root MuiTypography-h1 MuiTypography-alignCenter css-1aaknn6-MuiTypography-root"
+  >
+    Title label
+  </h1>
+</div>
+`;
