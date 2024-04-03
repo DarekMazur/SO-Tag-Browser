@@ -4,17 +4,17 @@ This application serves as a user interface for browsing tags from StackOverflow
 
 ## Table of Contents
 
-1. [Functionality](#1-functionality-)
-2. [Requirements](#2-requirements-)
-1. [Runtime Environment](#21-runtime-environment)
-2. [Testing Environment](#22-testing-environment)
-3. [Project Structure](#3-project-structure-)
-4. [Installation](#4-installation-)
-5. [Storybook](#5-storybook-)
-6. [Pagination](#6-pagination-)
-7. [Deployment](#7-deployment-)
+1. [Functionality](#1-functionality)
+2. [Requirements](#2-requirements)
+   1. [Runtime Environment](#21-runtime-environment)
+   2. [Testing Environment](#22-testing-environment)
+3. [Project Structure](#3-project-structure)
+4. [Installation](#4-installation)
+5. [Storybook](#5-storybook)
+6. [Pagination](#6-pagination)
+7. [Deployment](#7-deployment)
 
-## 1. Functionality :bulb:
+## 1. Functionality
 
 The application provides the following functionalities:
 
@@ -22,7 +22,7 @@ The application provides the following functionalities:
 * Configuration of the number of items per page
 * Selection of sorting fields and directions
 
-## 2. Requirements :warning:
+## 2. Requirements
 
 ### 2.1 .Runtime Environment
 * Node.js v20.11.1
@@ -74,7 +74,7 @@ react-content-manager/
   └── vite.config.js        # Vite configuration
 ```
 
-## 4. Installation :gear:
+## 4. Installation
 To install the application, follow these steps:
 
 Clone the repository from GitHub:
@@ -99,7 +99,7 @@ npm start
 
 The server will run on port 5173.
 
-## 5. Storybook :book:
+## 5. Storybook
 To view components in isolation, run Storybook:
 
 ```bash
@@ -108,7 +108,7 @@ npm run storybook
 
 Storybook will be available at port 6006.
 
-## 6. Pagination :clipboard:
+## 6. Pagination
 The application has a pagination function with the ability to select the number of displayed items on a page. The default version is based on selecting a value from the dropdown list. To change the selectable values edit the elements of the variable perPageCount (an array that accepts values of type number) in the file
 ```markdown
 src/assets/components/Molecules/Pagination/Pagination.tsx
@@ -125,7 +125,7 @@ or
 git checkout alt-per-page-pagination
 ```
 
-## 7. Deployment :rocket:
+## 7. Deployment
 If you wish to deploy the application, follow these additional steps:
 
 Add the following command to the "scripts" section in the package.json file:
